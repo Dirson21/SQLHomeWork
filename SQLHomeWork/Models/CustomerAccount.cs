@@ -9,15 +9,15 @@ namespace SQLHomeWork.Models
     public class CustomerAccount
     {
         public int Id { get; set; }
-        public string Email { get; set; }
+        public string Login { get; set; }
         public string Password { get; set; }
         public decimal Balance { get; set; }
 
-        public CustomerAccount(int id, string email, string password, decimal balance)
+        public CustomerAccount(int id, string login, string password, decimal balance)
         {
-            if (string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(login))
             {
-                throw new ArgumentException($"\"{nameof(email)}\" не может быть неопределенным или пустым.", nameof(email));
+                throw new ArgumentException($"\"{nameof(login)}\" не может быть неопределенным или пустым.", nameof(login));
             }
 
             if (string.IsNullOrEmpty(password))
@@ -34,19 +34,19 @@ namespace SQLHomeWork.Models
             }
 
             Id = id;
-            Email = email;
+            Login = login;
             Password = password;
             Balance = balance;
         }
 
-        public void UpdateEmail(string email)
+        public void UpdateLogin(string email)
         {
             if (string.IsNullOrEmpty(email))
             {
                 throw new ArgumentException($"\"{nameof(email)}\" не может быть неопределенным или пустым.", nameof(email));
             }
 
-            Email = email;
+            Login = email;
         }
         public void UpdatePassword(string password)
         {
