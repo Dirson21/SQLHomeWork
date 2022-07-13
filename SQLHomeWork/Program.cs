@@ -160,6 +160,7 @@ while(true)
             if (balance < 0)
             {
                 Console.WriteLine("Balance не может быть меньше нуля");
+                Console.WriteLine("Повторите ввод или введите exit");
                 continue;
             }
             customer.UpdateBalance(balance);
@@ -174,6 +175,10 @@ while(true)
     else if (command == "exit")
     {
         break;
+    }
+    else
+    {
+        Console.WriteLine("Неизвестная команда");
     }
 }
 
