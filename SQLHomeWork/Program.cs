@@ -1,5 +1,4 @@
-﻿
-using SQLHomeWork.Models;
+﻿using SQLHomeWork.Models;
 using SQLHomeWork.Repositories;
 
 const string connectionString = @"Data Source=ZALMAN\SQLEXPRESS;Initial Catalog=Pizzeria;Pooling=true;Integrated Security=SSPI;TrustServerCertificate=True";
