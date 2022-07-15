@@ -96,7 +96,7 @@ namespace SQLHomeWork.Repositories
 
         public void Update(CustomerAccount customerAccount)
         {
-            SqlConnection connection = new SqlConnection(_connectionString);
+            using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
             SqlCommand sqlCommand = connection.CreateCommand();
@@ -112,7 +112,7 @@ namespace SQLHomeWork.Repositories
 
         public void Delete(CustomerAccount customerAccount)
         {
-            SqlConnection connection = new SqlConnection(_connectionString);
+            using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
             SqlCommand sqlCommand = connection.CreateCommand();
@@ -126,7 +126,7 @@ namespace SQLHomeWork.Repositories
         public IReadOnlyList<Tuple<CustomerAccount, decimal>> GetAllTotalPrice()
         {
             var result = new List<Tuple<CustomerAccount, decimal>>();
-            SqlConnection connection = new SqlConnection(_connectionString);
+            using var connection = new SqlConnection(_connectionString);
             connection.Open();
 
             SqlCommand sqlCommand = connection.CreateCommand();
